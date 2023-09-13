@@ -12,3 +12,6 @@ RewriteRule .+ more_posts.php
 
 RewriteCond %{REQUEST_URI} (add_comment.php$)
 RewriteRule .+ add_comment.php
+
+RewriteCond %{REQUEST_URI} (add_like.php$)
+RewriteRule .+ add_like.php

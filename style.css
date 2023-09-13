@@ -62,4 +62,9 @@ button.publish:hover {
 
 .fav {
     height: 20px;
+    margin-right: 10px;
+}
+
+.like:hover {
+    margin-left: 1px;
 }

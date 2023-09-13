@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="/scripts.js"></script>
+    <script src="/likes.js"></script>
     <?php
     error_reporting(E_ALL);
     ini_set("display_errors", 'on');
