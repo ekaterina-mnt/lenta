@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !(\.(js|css|ico|jpg|png)$)
+RewriteRule .+ index.php
+
+RewriteCond %{REQUEST_URI} (publish.php$)
+RewriteRule .+ publish.php
+
+RewriteCond %{REQUEST_URI} (more_posts.php$)
+RewriteRule .+ more_posts.php
+
+RewriteCond %{REQUEST_URI} (add_comment.php$)
+RewriteRule .+ add_comment.php

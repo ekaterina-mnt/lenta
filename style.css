@@ -3,6 +3,15 @@
     margin: 0;
 }
 
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+.post-wrapper a {
+    text-decoration: none;
+    color: black;
+}
+
 .content {
     margin: 50px;
 }
@@ -11,13 +20,18 @@ body {
     background-color: #F6F6FF;
 }
 
-textarea.create-post {
+textarea.create-post, textarea.comment-post {
     background-color: #E5E5FF;
     color:black;
     border: none;
     width: 400px;
     height: 100px;
     padding: 5px;
+}
+
+textarea.comment-post {
+    height: 50px;
+
 }
 
 p.error {
@@ -44,4 +58,8 @@ button.publish:hover {
     padding: 20px;
     width: 800px;
     height: min-content;
+}
+
+.fav {
+    height: 20px;
 }
