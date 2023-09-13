@@ -1,22 +1,32 @@
-<p>
-    <textarea class="create-post" type="text" value="Что у вас нового?">
-</textarea>
-</p>
+<form method="POST" action="publish.php">
 
-<p>
-    <button type="submit" class="publish">
-        Опубликовать
-    </button>
-</p>
+    <p>
+        <textarea class="create-post" name="text" placeholder="Что у вас нового?">
+</textarea>
+    </p>
+    <?php
+    session_start();
+    if (isset($_SESSION['post_error'])) {
+    ?>
+        <p class="error"><?= $_SESSION['post_error'] ?></p>
+    <?php
+    unset($_SESSION['post_error']);
+    } ?>
+
+    <p>
+        <button type="submit" class="publish">
+            Опубликовать
+        </button>
+    </p>
+</form>
 
 <?php
-$link = mysqli_connect('localhost', 'root', '', 'lenta');
 
-if (!$link) {
-    echo "Ошибка доступа к базе данных";
-} else {
-    $posts = mysqli_query($link, "SELECT * FROM posts");
+$posts = mysqli_query($db, "SELECT * FROM posts ORDER BY id DESC LIMIT 10");
+?>
 
+<div class="all-posts-wrapper">
+    <?php
     if ($posts->num_rows) {
         foreach ($posts as $post) { ?>
             <div class="post-wrapper">
@@ -31,7 +41,8 @@ if (!$link) {
                 </p>
 
             </div>
-<?php
+    <?php
         }
     }
-}
+    ?>
+</div>
