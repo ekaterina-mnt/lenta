@@ -7,7 +7,7 @@ $text = $_POST['text'];
 if ($text) {
 $timestamp = date("Y-m-d H:i:s");
 
-mysqli_query($db, "INSERT INTO posts (text, timestamp) VALUES ('$text', '$timestamp')");
+mysqli_query($db, "INSERT INTO posts (text, timestamp, likes) VALUES ('$text', '$timestamp', 0)");
 
 } else {
     session_start();

@@ -18,31 +18,9 @@ if ($post->num_rows) {
 }
 ?>
 
-<h2>Комментарии</h2>
+<a class="back" href="/">Вернуться на главную</a>
 
-<!-- //ОСТАВИТЬ КОММЕНТАРИЙ -->
-
-<form method="POST" action="add_comment.php">
-    <p>
-        <textarea class="comment-post" name="text" placeholder="Напишите комментарий">
-</textarea>
-        <input name="post_id" type="hidden" value="<?= $post['id'] ?>">
-    </p>
-        <?php
-        session_start();
-        if (isset($_SESSION['post_error'])) {
-        ?>
-    <p class="error"><?= $_SESSION['post_error'] ?></p>
-<?php
-            unset($_SESSION['post_error']);
-        } ?>
-
-<p>
-    <button type="submit" class="publish">
-        Оставить комментарий
-    </button>
-</p>
-</form>
+<h2 id="com">Комментарии</h2>
 
 <!-- //КОММЕНТАРИИ -->
 
@@ -67,3 +45,27 @@ $comments = mysqli_query($db, "SELECT comments.text, comments.timestamp FROM com
     }
     ?>
 </div>
+
+<!-- //ОСТАВИТЬ КОММЕНТАРИЙ -->
+
+<form method="POST" action="add_comment.php">
+    <p>
+        <textarea class="comment-post" name="text" placeholder="Напишите комментарий">
+</textarea>
+        <input name="post_id" type="hidden" value="<?= $post['id'] ?>">
+    </p>
+        <?php
+        session_start();
+        if (isset($_SESSION['post_error'])) {
+        ?>
+    <p class="error"><?= $_SESSION['post_error'] ?></p>
+<?php
+            unset($_SESSION['post_error']);
+        } ?>
+
+<p>
+    <button type="submit" class="publish">
+        Оставить комментарий
+    </button>
+</p>
+</form>

@@ -94,7 +94,7 @@ if ($res1->num_rows) {
                     <span id="id<?= $post['id'] ?>"><?php
                                                     if ($likes) {
                                                         if (in_array($post['id'], array_keys($likes))) { ?>
-                                <?= $likes[$post['id']] ?>
+                                <?= $likes[$post['id']]?>
                             <?php
                                                         } else {
                                                             echo "0";

@@ -10,7 +10,7 @@ $(function () {
             data: { "post_id": post_id }
         }).done(function (likes) {
             let sel = 'span#id' + post_id;
-            $(sel).text(likes);
+            $(sel).text(" " + likes + " ");
         });
     });
 });

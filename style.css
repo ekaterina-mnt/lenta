@@ -68,3 +68,15 @@ button.publish:hover {
 .like:hover {
     margin-left: 1px;
 }
+
+.back {
+    text-decoration: none;
+    color:black;
+}
+
+h2#com {
+    margin-top: 100px;
+}
+.back:hover {
+    font-weight: bold;
+}
