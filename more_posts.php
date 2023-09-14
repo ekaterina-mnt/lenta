@@ -9,4 +9,6 @@ while ($row = mysqli_fetch_assoc($res)) {
     $posts[] = $row;
 }
 
+// likes ?
+
 echo json_encode($posts);
